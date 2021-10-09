@@ -456,8 +456,8 @@ async fn run_command<CT: ConfigStore + Send + Sync + 'static>(
                 .map_err(|e| format!("failed restarting guild vm: {}", e))?;
 
             Ok(Some(
-                "Restarting your guild's vm.... (note that if it keeps stopping there might be a \
-                 runeaway script that contains something like a infinite loop, you should find \
+                "Restarting your guild's vm... (note that if it keeps stopping, there might be a \
+                 runaway script that contains something like a infinite loop, you should find \
                  and remove the culprit)"
                     .to_string(),
             ))
