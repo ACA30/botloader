@@ -118,14 +118,14 @@ impl<CT: CsrfStore, ST: SessionStore> AuthHandlers<CT, ST> {
             .create_session(user, token_result)
             .await
             .map_err(|err| {
-                error!(%err, "failed creating user sessionø");
+                error!(%err, "failed creating user session");
                 ApiErrorResponse::InternalError
             })?;
 
         Ok(Html(format!(
             "
         <html>
-        <body>Login successfull! Token: {}</body>
+        <body>Login successful! Token: {}</body>
         </html>",
             session.token,
         )))
@@ -150,7 +150,7 @@ impl<CT: CsrfStore, ST: SessionStore> AuthHandlers<CT, ST> {
         Ok(Html(format!(
             "
         <html>
-        <body>Logout successfull! {}</body>
+        <body>Logout successful! {}</body>
         </html>",
             session.raw.user.name
         )))
