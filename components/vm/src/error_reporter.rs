@@ -18,7 +18,7 @@ pub trait ErrorReporter: Sync {
         self.report_error(
             guild_id,
             format!(
-                "An error occured in one of your scripts:```\n{}\n```",
+                "An error occurred in one of your scripts:```\n{}\n```",
                 error
             ),
         )
